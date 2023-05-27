@@ -1,8 +1,43 @@
 // Specific CSS for your home-page
 body {
-  height: 3000px;
+  height: 1500px;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
 
 a {
   text-decoration: none;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.show-img {
+  height: 500px;
+  background-size: cover;
+}
+
+.poster {
+  height: 300px;
+  width: 600px;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+
+  img {
+    width: auto;
+    height: auto;
+    object-fit: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+}
+
+.poster-details {
+  .overview {
+    height: 170px;
+    overflow-y: auto;
+  }
 }

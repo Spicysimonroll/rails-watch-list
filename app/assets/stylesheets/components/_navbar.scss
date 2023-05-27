@@ -1,16 +1,8 @@
-.text-white:hover {
-  opacity: 0.5;
-}
-
 .navbar-brand {
   font-size: 30px;
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
   background: transparent;
   transition: 0.2s ease;
@@ -20,10 +12,10 @@
   background-color: rgb(255, 255, 255);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar .navbar-brand img {
   width: 40px;
 }

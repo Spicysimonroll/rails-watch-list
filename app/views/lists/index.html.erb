@@ -1,8 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+<div class="navbar navbar-expand-sm navbar-light fixed-top" data-controller= "navbar" data-action= "scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
-    <div class="navbar-brand text-white ms-3" data-navbar-target="nav_logo">
+    <a href="/" class="navbar-brand text-white ms-3" data-navbar-target="nav_logo">
       <i class="fa-solid fa-film" ></i>
-    </div>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,6 +29,7 @@
   </div>
 </div>
 
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2luZW1hfGVufDB8fDB8fHww&w=1000&q=80');">
   <div class="container text-center">
     <h1 data-controller="typed-js"></h1>
@@ -37,12 +38,12 @@
 
 <div class="container d-flex mt-5 mb-3 justify-content-between w-75">
     <h2 id="lists" class="mt-2">My lists</h2>
-    <%= link_to "Create movie list", new_list_path, class: "btn btn-success rounded d-flex align-items-center text-white mt-2 mb-2 me-5" %>
+    <%= link_to "Create movie list", new_list_path, class: "btn btn-success rounded text-white mt-2 mb-2 me-5" %>
 </div>
 <div class="container text-center">
-  <div class="row">
+  <div class="row mt-4">
     <% @lists.each do |list| %>
-      <h3 class="col-3 ms-5 me-5 p-5 list_card" style="background-image: url('https://westburyarts.org/wp-content/uploads/2016/12/film.jpg');"><%= link_to list.name, list_path(list), class: "text-white" %></h3>
+      <h3 class="col-3 ms-5 me-5 mb-5 p-5 rounded list-card" style="background-image: url('https://westburyarts.org/wp-content/uploads/2016/12/film.jpg');"><%= link_to list.name, list_path(list), class: "text-white fw-bold" %></h3>
     <% end %>
   </div>
 </div>
