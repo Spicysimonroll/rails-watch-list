@@ -2,7 +2,7 @@
 <h1 class="mt-5 pt-5 text-center">Add a movie</h1>
 <div class="container">
   <%= simple_form_for([@list, @bookmark]) do |f| %>
-    <%= f.input :movie_id, :collection => @movies %>
+    <%= f.input :movie_id, :collection => @movies, input_html: { data: { controller: "tom-select" } } %>
     <%= f.input :comment %>
     <%= f.button :submit, "Add movie", class: "btn-primary" %>
   <% end %>
