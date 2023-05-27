@@ -1,8 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-    </a>
+    <div class="navbar-brand text-white ms-3" data-navbar-target="nav_logo">
+      <i class="fa-solid fa-film" ></i>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,11 +10,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <a class="nav-link text-white" href="#" data-navbar-target="nav_btn">My lists</a>
+            <a class="nav-link text-white" href="#lists" data-navbar-target="nav_btn">My lists</a>
           </li>
           <li class="nav-item">
             <%#<%= link_to "New list", new_list_path, class: "nav-link text-white", data: {navbar_target: :nav_btn} %>
-            <a class="nav-link text-white" href="/lists/new" data-navbar-target="nav_btn">New list</a>
+            <a class="nav-link text-white me-3" href="/lists/new" data-navbar-target="nav_btn">New list</a>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
@@ -35,6 +35,14 @@
   </div>
 </div>
 
-<% @lists.each do |list| %>
-    <h2><%= link_to list.name, list_path(list) %></h2>
-<% end %>
+<div class="container d-flex mt-5 mb-3 justify-content-between w-75">
+    <h2 id="lists" class="mt-2">My lists</h2>
+    <%= link_to "Create movie list", new_list_path, class: "btn btn-success rounded d-flex align-items-center text-white mt-2 mb-2 me-5" %>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <h3 class="col-3 ms-5 me-5 p-5 list_card" style="background-image: url('https://westburyarts.org/wp-content/uploads/2016/12/film.jpg');"><%= link_to list.name, list_path(list), class: "text-white" %></h3>
+    <% end %>
+  </div>
+</div>
