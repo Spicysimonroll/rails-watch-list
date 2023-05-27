@@ -1,0 +1,10 @@
+<%= render 'lists/navbar' %>
+<h1 class="mt-5 pt-5 text-center">Add your review</h1>
+<div class="container">
+  <%= simple_form_for([@list, @review]) do |f| %>
+    <%= f.input :comment, label: "Leave a comment" %>
+    <%= f.input :rating %>
+    <%= f.button :submit, "Share review", class: "btn-primary" %>
+  <% end %>
+  <%= link_to "Back", list_path(@list), class: "btn btn-secondary mt-5 pt-2 pb-2 ps-3 pe-3 rounded"%>
+</div>
