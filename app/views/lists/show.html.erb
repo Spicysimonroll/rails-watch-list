@@ -32,8 +32,12 @@
 <div class="container">
   <% @list.reviews.each do |review| %>
     <div class="mb-3 border-bottom">
+      <p>
+        <% review.rating.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+      </p>
       <p><%= review.comment %></p>
-      <p><%= review.rating %></p>
     </div>
   <% end %>
 </div>

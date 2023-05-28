@@ -3,7 +3,7 @@
 <div class="container">
   <%= simple_form_for([@list, @review]) do |f| %>
     <%= f.input :comment, label: "Leave a comment" %>
-    <%= f.input :rating %>
+    <%= f.input :rating, collection: (1..5), error: "The rating must be between 0-5", input_html: {data: { controller: "star-rating" }}%>
     <%= f.button :submit, "Share review", class: "btn-primary" %>
   <% end %>
   <%= link_to "Back", list_path(@list), class: "btn btn-secondary mt-5 pt-2 pb-2 ps-3 pe-3 rounded"%>
