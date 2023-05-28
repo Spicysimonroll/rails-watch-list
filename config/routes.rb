@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   resources :lists, only: [:show, :new, :create] do
     resources :bookmarks, only: [:new, :create, :destroy]
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:create]
   end
 end

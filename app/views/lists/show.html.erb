@@ -27,20 +27,26 @@
 
 <div class="container mt-5 d-flex justify-content-between align-items-center">
   <h3 class="fw-medium mb-3">Reviews</h3>
-  <%= link_to "Add review", new_list_review_path(@list), class: "btn btn-success rounded text-white mt-2 mb-2 me-5" %>
+  <%# <%= link_to "Add review", new_list_review_path(@list), class: "btn btn-success rounded text-white mt-2 mb-2 me-5" %>
 </div>
-<div class="container">
-  <% @list.reviews.each do |review| %>
-    <div class="mb-3 border-bottom">
-      <p>
-        <% review.rating.times do %>
-          <i class="fa-solid fa-star"></i>
-        <% end %>
-        <% (5 - review.rating).times do %>
-          <i class="fa-solid fa-star empty-star"></i>
-        <% end %>
-      </p>
-      <p><%= review.comment %></p>
-    </div>
-  <% end %>
+<div class="p-0 container d-flex justify-content-between">
+  <div class="container">
+    <% @list.reviews.each do |review| %>
+      <div class="mb-3 border-bottom">
+        <p>
+          <% review.rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+          <% (5 - review.rating).times do %>
+            <i class="fa-solid fa-star empty-star"></i>
+          <% end %>
+        </p>
+        <p><%= review.comment %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="container bg-white h-50 rounded">
+    <%= render 'reviews/new', list: @list, review: @review %>
+  </div>
 </div>
