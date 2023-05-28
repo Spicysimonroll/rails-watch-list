@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-end">
       <%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-success rounded text-white" %>
     </div>
-    <div class="row justify-content-between">
+    <div data-aos="fade-in" class="row justify-content-between">
       <% @list.bookmarks.each do |bookmark| %>
         <div class="col-4 p-0 ms-1 me-1 mt-5 mb-3 d-flex poster">
           <img src="<%= bookmark.movie.poster_url %>" alt="">
@@ -35,6 +35,9 @@
       <p>
         <% review.rating.times do %>
           <i class="fa-solid fa-star"></i>
+        <% end %>
+        <% (5 - review.rating).times do %>
+          <i class="fa-solid fa-star empty-star"></i>
         <% end %>
       </p>
       <p><%= review.comment %></p>

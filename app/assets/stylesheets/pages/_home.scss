@@ -47,3 +47,21 @@ a {
   border: none !important;
   background-color: #f4f4f4 !important;
 }
+
+.fa-star {
+  color: rgb(255, 234, 4);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
+}
+
+.empty-star {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
+}
+
+// [data-aos] {
+//   visibility: hidden;
+// }
+
+// [data-aos].animated {
+//   visibility: visible;
+// }
