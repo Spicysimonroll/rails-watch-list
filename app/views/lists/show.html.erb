@@ -25,12 +25,10 @@
   </div>
 </div>
 
-<div class="container mt-5 d-flex justify-content-between align-items-center">
-  <h3 class="fw-medium mb-3">Reviews</h3>
-  <%# <%= link_to "Add review", new_list_review_path(@list), class: "btn btn-success rounded text-white mt-2 mb-2 me-5" %>
-</div>
-<div class="p-0 container d-flex justify-content-between">
+<div class="container d-flex justify-content-between mt-5 mb-5 border-top">
   <div class="container">
+    <%# <%= link_to "Add review", new_list_review_path(@list), class: "btn btn-success rounded text-white mt-2 mb-2 me-5" %>
+    <h3 class="fw-medium mb-3 mt-4">Reviews</h3>
     <% @list.reviews.each do |review| %>
       <div class="mb-3 border-bottom">
         <p>
@@ -46,7 +44,7 @@
     <% end %>
   </div>
 
-  <div class="container bg-white h-50 rounded">
+  <div class="container bg-white h-50 rounded mt-4">
     <%= render 'reviews/new', list: @list, review: @review %>
   </div>
 </div>

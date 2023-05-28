@@ -43,7 +43,7 @@
 <div class="container text-center">
   <div class="row mt-4">
     <% @lists.each do |list| %>
-      <h3 class="col-3 ms-5 me-5 mb-5 p-5 rounded list-card" style="background-image: url('https://westburyarts.org/wp-content/uploads/2016/12/film.jpg');"><%= link_to list.name, list_path(list), class: "text-white fw-bold" %></h3>
+      <%= link_to list.name, list_path(list), class: "text-white fw-bold fs-4 col-3 ms-5 me-5 mb-5 p-5 rounded list-card", style: "background-image: url('https://westburyarts.org/wp-content/uploads/2016/12/film.jpg');"%>
     <% end %>
   </div>
 </div>

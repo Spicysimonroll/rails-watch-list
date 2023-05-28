@@ -17,5 +17,5 @@ Movie.destroy_all
 doc = JSON.parse(URI.open('https://tmdb.lewagon.com/movie/top_rated').read)
 movies = doc["results"]
 movies.each do |movie|
-  Movie.create(title: movie["original_title"], overview: movie["overview"], poster_url:"https://image.tmdb.org/t/p/original#{movie["poster_path"]}", rating: movie["vote_average"])
+  Movie.create(title: movie["original_title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/original#{movie["poster_path"]}", rating: movie["vote_average"])
 end
